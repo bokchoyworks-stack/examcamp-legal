@@ -1,79 +1,109 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ExamCamp Privacy Policy</title><style>body{font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;background:#f4f5ff;color:#1a2848;line-height:1.8;margin:0;padding:32px 20px}main{max-width:820px;margin:auto;background:white;padding:32px;border-radius:24px}h1{font-size:30px;line-height:1.3}h2{font-size:20px;margin-top:28px}a{color:#4e58d3}nav{display:flex;gap:18px;flex-wrap:wrap}p{white-space:pre-wrap}hr{border:0;border-top:1px solid #dee3f0;margin:40px 0}</style></head><body><main><nav><a href="#ja">日本語</a><a href="#en-US">English</a><a href="#zh-Hant">繁體中文</a><a href="support.html">Support</a><a href="terms.html">Terms</a></nav><section id="ja" lang="ja"><h1>ExamCamp プライバシーポリシー</h1>
-<p>最終更新：2026年10月6日</p>
+<p>最終更新：2026年10月7日</p>
 <h2>1. 運営者と対象</h2>
-<p>ExamCampはHiroki Murai / bokchoyworksが提供します。本ポリシーは、写真から問題を作る機能、学習記録、購入、サポートにおける情報の取り扱いを説明します。</p>
+<p>ExamCamp（日本「ノートde問題集」、米国「Quizbinder」、英国「NotedeQuiz」、台湾「筆記變考卷」）はHiroki Murai / bokchoyworksが提供します。本ポリシーは、写真から問題を作る機能、学習記録、購入、広告、サポートにおける情報の取り扱いを説明します。</p>
 <h2>2. 端末に保存する情報</h2>
-<p>取り込んだ写真、生成した問題・選択肢・解説、科目、解答履歴、学習記録、設定は端末内に保存します。独自のアカウント登録はありません。OSのバックアップ設定によってはAppleのバックアップに含まれる場合があります。</p>
+<p>取り込んだ写真、生成した問題・選択肢・解説、科目、解答履歴、学習記録、設定は端末内だけに保存します。独自のアカウント登録はありません。OSのバックアップ設定によってはAppleのバックアップに含まれる場合があります。AI処理時の写真の送信については第3項をご覧ください。</p>
 <h2>3. AI処理への送信</h2>
-<p>利用者が解析を開始すると、選択した写真、そこから抽出した文字や学習項目、問題生成の指示を、運営者のGoogle Cloud上のサーバーおよびGoogle Gemini APIへ送信します。目的は読み取り、問題・選択肢・解説の生成です。インターネット接続が必要です。顔写真、住所、連絡先、医療情報、他人の個人情報などを含むページは送信しないでください。
-サーバーに写真を保管して閲覧する機能は設けていません。ただし、GoogleのAIサービスは安全性・不正利用対策のため、入力や出力を一定期間保持する場合があります。運営用の接続・エラーログも保存される場合があります。このため、送信したデータが直ちに完全に消去されることは保証しません。
-Googleの有料Gemini APIでは、入力と出力をGoogleの製品改善に利用しないと規定されています。この扱いは、有効な課金アカウントに紐づくCloudプロジェクトで処理される場合に適用されます。Google側の保持・処理には同社の規約が適用されます。</p>
+<p>問題作成のために送信するのは、利用者が撮影・選択したページの写真と問題作成の指示文だけです。送信経路は、端末→運営者のサーバー（Google Cloud Run、東京リージョン asia-northeast1）→OpenAI, L.L.C.（米国）のOpenAI APIです。AIの送信先はOpenAIのみで、Responses APIとモデル gpt-6-luna を使用します。氏名やメールアドレスなどの利用者情報は送信しません。インターネット接続が必要です。写真に個人情報が写っていれば、その内容も送信されるため、顔写真、住所、連絡先、医療情報、他人の個人情報などを含むページは送信しないでください。
+運営者のサーバーは写真や読み取った文字を保存せず、処理後に破棄します。API呼び出しには store:false を設定します。ただし、これはOpenAI側でのすべての保持がなくなることを意味しません。OpenAI APIでは、APIデータはデフォルトでモデルの学習に使用されません。OpenAI側の処理・保持期間は同社の公開ポリシーに従います。
+最初に写真を送信する前に、送るもの、送信先がOpenAIであること、運営者のサーバーが写真・読み取った文字を保存しないこと、18歳未満は保護者の了解が必要であること、AIの出力に誤りがあり得ることを同意画面で説明します。同意しなければ送信しません。設定の「AIへの送信について」でいつでも説明を確認し、同意を取り消せます。取り消した後は、再び同意するまで写真を送信しません。取り消しは、すでに送信されたデータのOpenAI側の保持を直ちに終了させるものではありません。
+AIの出力には誤りがあり得ます。問題、選択肢、解説は必ず元の教材で確認してください。
+OpenAIのAPIデータ利用・保持方針：<a href="https://developers.openai.com/api/docs/guides/your-data?popup=false">Data controls in the OpenAI platform</a></p>
 <h2>4. 購入確認・ページ残高</h2>
-<p>Appleの署名付き購入情報、アプリの購入識別子、商品・取引識別子、購入時刻や有効期限などを購入確認に使用します。サーバーは、購入識別子に関連づけた利用ページ数、お試しの開始情報、追加ページの残高、二重付与防止の取引情報を保存します。これらを残高管理、購入復元、不正防止に使用します。運営者はクレジットカード番号やApple Accountのパスワードを受け取りません。</p>
+<p>Appleの署名付き購入情報を検証し、匿名の購入識別子、アプリ購入日、使用枚数、追加購入枚数、処理日時をGoogle Cloud Firestoreに記録します。これらは枚数管理と不正防止のみに使用します。運営者はクレジットカード番号やApple Accountのパスワードを受け取りません。
+アプリ本体は有料です。アプリ購入から7日間、合計5枚まで無料で問題を作成できます。これはアプリ独自の無料枠であり、サブスクリプションの無料トライアルではありません。
+月額自動更新サブスクリプションは同一グループの「ベーシック」（毎月25枚）と「プラス」（毎月65枚）です。価格はApp Storeの表示に従います。月間枠はUTCの暦月で更新され、サブスクリプションの更新日とは異なります。月間枠の未使用分は翌月に持ち越せません。
+加入者のみ、消耗型の「5枚追加」を購入できます。追加購入の未使用分は翌月へ持ち越せます。「広告なし」は買い切り商品です。「広告なし」の購入者およびサブスクリプション加入者には広告を表示しません。
+サブスクリプションは期間終了の24時間前までに解約しない限り自動更新され、料金はApple Accountに請求されます。解約は設定アプリ→Apple Account→サブスクリプションから行えます。アプリを削除しても解約されません。</p>
 <h2>5. 技術情報とサポート</h2>
-<p>サービス提供や障害対応のため、通信時刻、応答状態、IPアドレスなどの通信情報、エラー情報が運営者またはインフラ事業者に処理される場合があります。お問い合わせをいただいた場合は、送信者のメールアドレスとお問い合わせ内容を対応のために使用します。</p>
+<p>サービス提供や障害対応のため、通信時刻、応答状態、IPアドレスなどの通信情報、エラー情報が運営者またはインフラ事業者に処理される場合があります。写真・読み取った文字を運営者のサーバーのログに保存しません。お問い合わせをいただいた場合は、送信者のメールアドレスとお問い合わせ内容を対応のために使用します。サポートに送られたメールはAI処理への送信対象ではありません。</p>
 <h2>6. 保存期間と削除</h2>
-<p>端末内の問題はアプリ内で削除できます。アプリを削除すると端末内のアプリデータが削除されますが、OSバックアップ、Appleの購入履歴、サーバーの残高・取引記録が同時に消えるとは限りません。サーバーの記録は、残高や購入権利の維持、不正防止、必要な法的義務のために必要な期間保持します。サーバー情報の照会・削除は下記窓口へ依頼できます。残高の消失や復元への影響、法律上保持すべき記録について説明したうえで対応します。Google側の記録の保持にはGoogleの規約が適用されます。</p>
+<p>端末内の問題はアプリ内で削除できます。アプリを削除すると端末内のアプリデータが削除されますが、OSバックアップ、Appleの購入履歴、サーバーの枚数管理記録が同時に消えるとは限りません。サーバーの記録は、枚数管理、不正防止、必要な法的義務のために必要な期間保持します。サーバー情報の照会・削除は下記窓口へ依頼できます。残高の消失や復元への影響、法律上保持すべき記録について説明したうえで対応します。写真・読み取った文字は運営者のサーバーで処理後に破棄します。OpenAI側の保持期間はOpenAIの公開ポリシーに従い、特定の日数や即時の完全消去は保証しません。</p>
 <h2>7. 提供先と国外処理</h2>
-<p>処理先はApple、Google Cloud、Google Gemini APIなどです。サービス事業者の設備がある国・地域で情報が処理される場合があります。運営者は学習内容を販売したり、広告ターゲティングのために第三者へ提供したりしません。</p>
+<p>購入処理にはApple、サーバー処理・枚数管理にはGoogle Cloud RunおよびGoogle Cloud Firestore、AI処理にはOpenAI, L.L.C.（米国）、広告にはGoogle AdMobを利用します。AIの送信先はOpenAIのみです。運営者のAI処理サーバーは東京リージョン asia-northeast1 にありますが、OpenAIへの送信は米国の事業者への提供を伴います。その他のサービス事業者の設備がある国・地域で情報が処理される場合もあります。学習内容を販売したり、広告ターゲティングのために第三者へ提供したりしません。
+日本の個人情報保護法に基づく外国にある第三者への提供として、写真に個人データが含まれる場合の提供先はOpenAI, L.L.C.、所在国は米国、目的は写真の読み取りと問題・選択肢・解説の生成です。米国の個人情報保護制度は日本と異なり、連邦の分野別法や州法などによります。制度の情報は<a href="https://www.ppc.go.jp/enforcement/infoprovision/laws/offshore_report_america/">個人情報保護委員会の米国制度の公表資料</a>をご覧ください。OpenAIのデータ保護上の取り扱い（デフォルトで学習に使用しないこと、保持等）は第3項の公開ポリシーで確認できます。これらを説明したうえで、最初の送信前に外国にある第三者への提供を含む同意を取得します。
+英国の利用者について、UK GDPRが適用される場合の管理者はHiroki Murai / bokchoyworksです。AI送信は同意、購入・枚数管理とサポートは契約の履行、サービス保護・不正防止は正当な利益、法令上必要な保持は法的義務を処理の根拠とします。適用法に従い、アクセス、訂正、削除、処理の制限、異議申立て、データポータビリティを請求でき、同意を撤回できます。撤回前の処理の適法性には影響しません。日本・米国など英国外への移転には、適用されるUK GDPRの国際移転要件に従う必要があります。移転の保護措置に関する情報は下記窓口へお問い合わせください。苦情は<a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/international-transfers/a-brief-guide-to-international-transfers/">英国の情報コミッショナー事務局（ICO）</a>へ申し立てることもできます。</p>
 <h2>8. 広告</h2>
-<p>このポリシーに対応する現行Release構成では、本番広告ユニットおよび広告SDKが未設定であり、広告配信を行いません。広告を有効にする場合は、広告事業者のデータ処理、同意・追跡の選択と本ポリシーを更新してから提供します。</p>
+<p>未加入で「広告なし」を購入していない利用者に限り、Google AdMobのバナー広告を1枚表示します。サブスクリプション加入者と「広告なし」の購入者には表示しません。広告配信・測定・不正防止のため、Google AdMobが端末情報、IPアドレス、広告の表示・操作情報などを処理する場合があります。広告識別子などの取り扱いは、必要な同意や端末のプライバシー設定に従います。EEA（欧州経済領域）・英国ではGoogle UMPの同意画面を表示し、その選択に従って広告を配信します。広告に関する同意はAI送信への同意とは別です。学習内容や写真を広告目的で送信しません。Googleの処理にはGoogleプライバシーポリシーが適用されます。</p>
 <h2>9. 権限と利用対象</h2>
-<p>カメラはページ撮影に、写真の選択は利用者が選んだ画像の取り込みに使用します。iOSの設定からカメラの許可を変更できます。AI機能の利用対象にはAI事業者の年齢・地域条件が適用されます。提供条件の確認に関するお問い合わせは下記窓口へご連絡ください。</p>
+<p>カメラはページ撮影に、写真の選択は利用者が選んだ画像の取り込みに使用します。iOSの設定からカメラの許可を変更できます。
+本アプリは13歳以上が対象です。18歳未満は保護者の同意を得て利用してください。13歳未満は利用できません。13歳未満の方の情報を意図的に収集しません。App Storeの年齢区分は13+です。
+AI送信への同意は設定の「AIへの送信について」で確認・取り消しできます。</p>
 <h2>10. 変更とお問い合わせ</h2>
-<p>変更時は本ページの更新日を改めます。プライバシーに関するお問い合わせ：bokchoyworks@gmail.com
-Googleプライバシーポリシー：https://policies.google.com/privacy
-Gemini API規約：https://ai.google.dev/gemini-api/terms
-Appleプライバシーポリシー：https://www.apple.com/legal/privacy/</p></section><hr><section id="en-US" lang="en-US"><h1>ExamCamp Privacy Policy</h1>
-<p>Last updated: October 6, 2026</p>
+<p>変更時は本ページの更新日を改めます。プライバシーに関するお問い合わせ：<a href="mailto:bokchoyworks@gmail.com">bokchoyworks@gmail.com</a>
+OpenAIのAPIデータ利用・保持方針：<a href="https://developers.openai.com/api/docs/guides/your-data?popup=false">Data controls in the OpenAI platform</a>
+Googleプライバシーポリシー：<a href="https://policies.google.com/privacy">Googleプライバシーポリシー</a>
+Appleプライバシーポリシー：<a href="https://www.apple.com/legal/privacy/">Appleプライバシーポリシー</a></p></section><hr><section id="en-US" lang="en-US"><h1>ExamCamp Privacy Policy</h1>
+<p>Last updated: October 7, 2026</p>
 <h2>1. Operator and scope</h2>
-<p>ExamCamp is provided by Hiroki Murai / bokchoyworks. This policy explains information handling for photo-to-quiz processing, study records, purchases, and support.</p>
+<p>ExamCamp (marketed as ノートde問題集 in Japan, Quizbinder in the United States, NotedeQuiz in the United Kingdom, and 筆記變考卷 in Taiwan) is provided by Hiroki Murai / bokchoyworks. This policy explains information handling for photo-to-quiz processing, study records, purchases, advertising, and support.</p>
 <h2>2. On-device information</h2>
-<p>Imported photos, generated questions, choices, explanations, subjects, answer history, study records, and settings are stored on your device. No separate developer account registration is required. Your operating-system backup settings may include this data in Apple backups.</p>
+<p>Imported photos, generated questions, choices, explanations, subjects, answer history, study records, and settings are stored only on your device. No separate developer account registration is required. Your operating-system backup settings may include this data in Apple backups. See Section 3 for transmission of photos during AI processing.</p>
 <h2>3. AI processing</h2>
-<p>When you start analysis, selected photos, extracted text and study items, and generation instructions are sent to the developer’s Google Cloud server and Google Gemini API to read the material and generate questions, choices, and explanations. An internet connection is required. Do not send pages containing faces, addresses, contact details, medical information, or other people’s personal information.
-The server does not provide a photo archive or browsing feature. However, Google’s AI service may retain inputs and outputs for a limited period for safety and abuse prevention. Operational connection and error logs may also be retained. We therefore do not guarantee immediate, complete erasure of transmitted information.
-Google’s paid Gemini API terms state that inputs and outputs are not used to improve Google’s products. This treatment applies when processing uses a Cloud project linked to an active billing account. Google’s retention and processing are governed by its terms.</p>
+<p>Only photos of pages you photograph or select and quiz-generation instructions are sent for quiz creation. The route is your device → the developer’s server (Google Cloud Run, Tokyo region asia-northeast1) → the OpenAI API provided by OpenAI, L.L.C. (United States). OpenAI is the only AI recipient. We use the Responses API with the gpt-6-luna model. We do not send user information such as names or email addresses. An internet connection is required. Any personal information visible in a photo will also be transmitted, so do not send pages containing faces, addresses, contact details, medical information, or other people’s personal information.
+The developer’s server does not store photos or recognized text and discards them after processing. API calls use store:false. This does not mean that all retention by OpenAI is eliminated. By default, OpenAI does not use API data to train its models. OpenAI’s processing and retention periods follow its published policy.
+Before the first photo is sent, a consent screen explains what is sent, that the recipient is OpenAI, that the developer’s server does not store photos or recognized text, that users under 18 need parental permission, and that AI output may contain errors. No photos are sent without consent. You can review this explanation and withdraw consent at any time under Settings > “About sending data to AI.” After withdrawal, no photos are sent until you consent again. Withdrawal does not immediately end OpenAI’s retention of data already sent.
+AI output may contain errors. Always check questions, choices, and explanations against the original study material.
+OpenAI API data use and retention policy: <a href="https://developers.openai.com/api/docs/guides/your-data?popup=false">Data controls in the OpenAI platform</a></p>
 <h2>4. Purchase verification and page balances</h2>
-<p>We use Apple-signed purchase information, app purchase identifiers, product and transaction identifiers, purchase dates, and expiration information to verify purchases. The server stores page usage, trial start information, purchased page balances, and transaction records to prevent duplicate crediting, associated with the purchase identifier. These records support balance management, restoration, and fraud prevention. We do not receive payment card numbers or Apple Account passwords.</p>
+<p>We verify Apple-signed purchase information and record an anonymous purchase identifier, the app purchase date, page usage, purchased extra-page counts, and processing timestamps in Google Cloud Firestore. These records are used only for page allowance management and fraud prevention. We do not receive payment card numbers or Apple Account passwords.
+The app itself is paid. For 7 days from your app purchase, you can create quizzes from up to 5 pages in total at no additional charge. This is the app’s own free allowance, not a subscription free trial.
+Basic (25 pages per month) and Plus (65 pages per month) are monthly auto-renewing subscriptions in the same subscription group. Prices are shown in the App Store. Monthly quotas reset by UTC calendar month, separately from subscription renewal dates. Unused monthly quotas do not roll over.
+Only subscribers can purchase the consumable “5 extra pages.” Unused purchased extra pages carry over to the next month. “Remove ads” is a one-time purchase. No ads are shown to purchasers of “Remove ads” or to subscribers.
+Subscriptions automatically renew unless canceled at least 24 hours before the current period ends, and charges are billed to your Apple Account. Cancel in the Settings app > Apple Account > Subscriptions. Deleting the app does not cancel a subscription.</p>
 <h2>5. Technical information and support</h2>
-<p>Connection times, response status, IP addresses and other network information, and errors may be processed by the developer or infrastructure providers to operate and troubleshoot the service. If you contact support, your email address and message are used to respond.</p>
+<p>Connection times, response status, IP addresses and other network information, and errors may be processed by the developer or infrastructure providers to operate and troubleshoot the service. Photos and recognized text are not stored in the developer’s server logs. If you contact support, your email address and message are used to respond. Support emails are not sent for AI processing.</p>
 <h2>6. Retention and deletion</h2>
-<p>You can delete questions in the app. Removing the app deletes its on-device data, but does not necessarily delete operating-system backups, Apple purchase records, or server balance and transaction records. Server records are retained as needed to maintain balances and purchase rights, prevent abuse, and meet applicable legal obligations. Contact us to request access to or deletion of server records. We will explain any effect on unused balances or restoration and any records that must be retained by law. Google’s records are subject to Google’s terms.</p>
+<p>You can delete questions in the app. Removing the app deletes its on-device data, but does not necessarily delete operating-system backups, Apple purchase records, or server page allowance records. Server records are retained as needed for page allowance management, fraud prevention, and applicable legal obligations. Contact us to request access to or deletion of server records. We will explain any effect on unused balances or restoration and any records that must be retained by law. The developer’s server discards photos and recognized text after processing. OpenAI’s retention periods follow its published policy; we do not guarantee a specific number of days or immediate, complete erasure.</p>
 <h2>7. Providers and international processing</h2>
-<p>Providers include Apple, Google Cloud, and Google Gemini API. Information may be processed in countries where these providers operate facilities. We do not sell study content or provide it for third-party advertising targeting.</p>
+<p>We use Apple for purchases, Google Cloud Run and Google Cloud Firestore for server processing and page allowance management, OpenAI, L.L.C. (United States) for AI processing, and Google AdMob for advertising. OpenAI is the only AI recipient. The developer’s AI processing server is in the Tokyo region asia-northeast1, but transmission to OpenAI involves provision to a United States provider. Information may also be processed in countries or regions where other providers operate facilities. We do not sell study content or provide it for third-party advertising targeting.
+For provision to a third party in a foreign country under Japan’s Act on the Protection of Personal Information, if photos contain personal data, the recipient is OpenAI, L.L.C., the country is the United States, and the purpose is to read photos and generate questions, choices, and explanations. The United States privacy framework differs from Japan’s and includes sector-specific federal laws and state laws. See the <a href="https://www.ppc.go.jp/enforcement/infoprovision/laws/offshore_report_america/">Personal Information Protection Commission’s published information on the United States</a> for information on that framework. OpenAI’s data protection practices, including no training by default and retention, are described in the public policy linked in Section 3. We explain this information and obtain consent, including consent to provision to a third party in a foreign country, before the first transmission.
+For United Kingdom users, where UK GDPR applies, the controller is Hiroki Murai / bokchoyworks. The processing bases are consent for AI transmission, performance of a contract for purchases, page allowance management, and support, legitimate interests for service protection and fraud prevention, and legal obligations for legally required retention. Subject to applicable law, you may request access, correction, erasure, restriction, objection, and data portability, and withdraw consent. Withdrawal does not affect the lawfulness of earlier processing. Transfers outside the United Kingdom, including to Japan and the United States, must comply with applicable UK GDPR international transfer requirements. Contact us for information on transfer safeguards. You may also lodge a complaint with the <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/international-transfers/a-brief-guide-to-international-transfers/">United Kingdom Information Commissioner’s Office (ICO)</a>.</p>
 <h2>8. Advertising</h2>
-<p>The current Release configuration covered by this policy has no production ad unit or advertising SDK configured and does not serve ads. Before advertising is enabled, this policy and relevant consent and tracking disclosures will be updated to describe the advertising provider’s processing.</p>
+<p>One Google AdMob banner is shown only to users who are not subscribed and have not purchased “Remove ads.” Subscribers and purchasers of “Remove ads” do not see ads. Google AdMob may process device information, IP addresses, and ad impressions and interactions for ad delivery, measurement, and fraud prevention. Advertising identifiers and similar data are handled according to required consent and device privacy settings. In the EEA (European Economic Area) and the United Kingdom, we display the Google UMP consent screen and serve ads according to those choices. Advertising consent is separate from consent to send data to AI. We do not send study content or photos for advertising purposes. Google’s processing is governed by the Google Privacy Policy.</p>
 <h2>9. Permissions and eligibility</h2>
-<p>The camera is used to photograph pages; the photo picker imports images you select. Camera permission can be changed in iOS Settings. AI functionality is subject to the AI provider’s age and regional eligibility conditions. Contact us with questions about availability.</p>
+<p>The camera is used to photograph pages; the photo picker imports images you select. Camera permission can be changed in iOS Settings.
+The app is for users aged 13 and older. Users under 18 must obtain parental consent. Children under 13 may not use the app. We do not knowingly collect information from children under 13. The App Store age rating is 13+.
+You can review and withdraw AI transmission consent under Settings > “About sending data to AI.”</p>
 <h2>10. Changes and contact</h2>
-<p>Updates will appear on this page with a revised date. Privacy inquiries: bokchoyworks@gmail.com
-Google Privacy Policy: https://policies.google.com/privacy
-Gemini API Terms: https://ai.google.dev/gemini-api/terms
-Apple Privacy Policy: https://www.apple.com/legal/privacy/</p></section><hr><section id="zh-Hant" lang="zh-Hant"><h1>ExamCamp 隱私權政策</h1>
-<p>最後更新：2026年10月6日</p>
+<p>Updates will appear on this page with a revised date. Privacy inquiries: <a href="mailto:bokchoyworks@gmail.com">bokchoyworks@gmail.com</a>
+OpenAI API data use and retention policy: <a href="https://developers.openai.com/api/docs/guides/your-data?popup=false">Data controls in the OpenAI platform</a>
+Google Privacy Policy: <a href="https://policies.google.com/privacy">Google Privacy Policy</a>
+Apple Privacy Policy: <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a></p></section><hr><section id="zh-Hant" lang="zh-Hant"><h1>ExamCamp 隱私權政策</h1>
+<p>最後更新：2026年10月7日</p>
 <h2>1. 營運者與適用範圍</h2>
-<p>ExamCamp 由 Hiroki Murai/ bokchoyworks 提供。本政策說明照片出題、學習紀錄、購買與客服的資料處理。</p>
+<p>ExamCamp（日本「ノートde問題集」、美國「Quizbinder」、英國「NotedeQuiz」、台灣「筆記變考卷」）由 Hiroki Murai / bokchoyworks 提供。本政策說明照片出題、學習紀錄、購買、廣告與客服的資料處理。</p>
 <h2>2. 裝置內資料</h2>
-<p>匯入照片、生成題目、選項、解說、科目、作答紀錄、學習紀錄及設定儲存在您的裝置上。無須另外註冊開發者帳號。依作業系統備份設定，這些資料可能包含在 Apple 備份中。</p>
+<p>匯入照片、生成題目、選項、解說、科目、作答紀錄、學習紀錄及設定僅儲存在您的裝置上。無須另外註冊開發者帳號。依作業系統備份設定，這些資料可能包含在 Apple 備份中。AI 處理時的照片傳送請參閱第3項。</p>
 <h2>3. AI 處理</h2>
-<p>開始分析時，選擇的照片、辨識文字與學習項目、出題指示會傳送至開發者的 Google Cloud 伺服器及 Google Gemini API，以辨識內容並生成題目、選項與解說。此功能需要網路。請勿傳送包含人臉、地址、聯絡資訊、醫療資訊或他人個人資訊的頁面。
-伺服器不提供照片存檔與瀏覽功能，但 Google 的 AI 服務可能為安全與防止濫用而保留輸入和輸出一段時間。營運連線與錯誤紀錄也可能保留，因此無法保證傳送資料立即且完全消除。
-Google 的付費 Gemini API 條款規定，不將輸入與輸出用於改善 Google 產品。此規定適用於透過連結有效帳單帳戶的 Cloud 專案處理時。Google 的保存與處理依其條款辦理。</p>
+<p>為產生題目，僅傳送您拍攝或選擇的頁面照片與出題指示。傳送路徑為裝置→開發者的伺服器（Google Cloud Run，東京區域 asia-northeast1）→OpenAI, L.L.C.（美國）提供的 OpenAI API。AI 接收者僅為 OpenAI，使用 Responses API 與 gpt-6-luna 模型。不傳送姓名、電子郵件地址等使用者資訊。此功能需要網路。照片中若有個人資訊，該內容也會一併傳送，因此請勿傳送包含人臉、地址、聯絡資訊、醫療資訊或他人個人資訊的頁面。
+開發者的伺服器不儲存照片或辨識文字，處理後即丟棄。API 呼叫設定為 store:false，但這不代表 OpenAI 不會保留任何資料。OpenAI 預設不將 API 資料用於模型訓練。OpenAI 的處理與保存期間依其公開政策辦理。
+首次傳送照片前，同意畫面會說明傳送內容、接收者為 OpenAI、開發者的伺服器不儲存照片或辨識文字、未滿18歲須取得家長同意，以及 AI 輸出可能有誤。不同意就不傳送照片。可隨時於設定的「關於傳送資料至 AI」查看說明或撤回同意。撤回後，在重新同意之前不會傳送照片。撤回同意不會立即終止 OpenAI 對已傳送資料的保存。
+AI 輸出可能有誤。請務必以原始教材核對題目、選項與解說。
+OpenAI API 資料使用與保存政策：<a href="https://developers.openai.com/api/docs/guides/your-data?popup=false">Data controls in the OpenAI platform</a></p>
 <h2>4. 購買驗證與頁數餘額</h2>
-<p>我們使用 Apple 簽署的購買資訊、App 購買識別碼、產品與交易識別碼、購買日期及有效期限以驗證購買。伺服器儲存與購買識別碼關聯的使用頁數、試用開始資訊、加購餘額與避免重複加值的交易紀錄，用於餘額管理、還原及防止詐欺。我們不取得信用卡號或 Apple Account 密碼。</p>
+<p>我們驗證 Apple 簽署的購買資訊，並於 Google Cloud Firestore 記錄匿名購買識別碼、App 購買日期、已使用頁數、加購頁數與處理時間。這些紀錄僅用於頁數管理及防止詐欺。我們不取得信用卡號或 Apple Account 密碼。
+App 本體為付費購買。自購買 App 起7天內，可免費使用合計最多5頁來產生題目。這是 App 自行提供的免費額度，並非訂閱的免費試用。
+「基本」（每月25頁）與「進階」（每月65頁）為同一訂閱群組內的每月自動續訂方案。價格依 App Store 顯示為準。每月額度依 UTC 曆月重設，與訂閱續訂日期不同。每月未用額度不會累積至下個月。
+僅訂閱者可購買消耗型的「加購5頁」。未使用的加購頁數可保留至下個月。「移除廣告」為一次性買斷商品。「移除廣告」購買者與訂閱者均不會看到廣告。
+除非在目前期間結束至少24小時前取消，否則訂閱會自動續訂，費用由 Apple Account 支付。可於設定 App→Apple Account→訂閱項目取消。刪除 App 不會取消訂閱。</p>
 <h2>5. 技術資訊與客服</h2>
-<p>為營運與障礙排除，開發者或基礎設施服務商可能處理連線時間、回應狀態、IP 位址等網路資訊與錯誤資訊。聯絡客服時，電子郵件地址及訊息用於回覆與處理問題。</p>
+<p>為營運與障礙排除，開發者或基礎設施服務商可能處理連線時間、回應狀態、IP 位址等網路資訊與錯誤資訊。照片與辨識文字不會儲存於開發者的伺服器紀錄。聯絡客服時，電子郵件地址及訊息用於回覆與處理問題。客服郵件不會傳送作 AI 處理。</p>
 <h2>6. 保存與刪除</h2>
-<p>可在 App 中刪除題目。移除 App 會刪除其裝置內資料，但不一定同步移除作業系統備份、Apple 購買紀錄或伺服器的餘額與交易紀錄。伺服器紀錄依維護餘額與購買權利、防止濫用及法律義務所需期間保存。可向下列窗口申請查詢或刪除；我們會說明未使用餘額、還原功能的影響及依法須保留的紀錄。Google 保存的紀錄依 Google 條款辦理。</p>
+<p>可在 App 中刪除題目。移除 App 會刪除其裝置內資料，但不一定同步移除作業系統備份、Apple 購買紀錄或伺服器的頁數管理紀錄。伺服器紀錄依頁數管理、防止詐欺及法律義務所需期間保存。可向下列窗口申請查詢或刪除；我們會說明未使用餘額、還原功能的影響及依法須保留的紀錄。開發者的伺服器於處理後丟棄照片與辨識文字。OpenAI 的保存期間依其公開政策辦理，不保證特定天數或立即完全刪除。</p>
 <h2>7. 服務商與跨境處理</h2>
-<p>服務商包括 Apple、Google Cloud 及 Google Gemini API。資料可能於這些服務商設施所在國家或地區處理。我們不販售學習內容，也不將其提供作第三方廣告鎖定用途。</p>
+<p>購買處理使用 Apple；伺服器處理與頁數管理使用 Google Cloud Run 及 Google Cloud Firestore；AI 處理使用 OpenAI, L.L.C.（美國）；廣告使用 Google AdMob。AI 接收者僅為 OpenAI。開發者的 AI 處理伺服器位於東京區域 asia-northeast1，但傳送至 OpenAI 涉及向美國業者提供資料。資料也可能於其他服務商設施所在國家或地區處理。不販售學習內容，也不將其提供作第三方廣告鎖定用途。
+依日本《個人資訊保護法》關於向外國第三方提供資料的規定，若照片包含個人資料，接收者為 OpenAI, L.L.C.，所在國為美國，目的為辨識照片並生成題目、選項與解說。美國的個人資訊保護制度與日本不同，包括聯邦各領域法律及州法等。制度資訊請參閱<a href="https://www.ppc.go.jp/enforcement/infoprovision/laws/offshore_report_america/">日本個人資訊保護委員會公布的美國制度資料</a>。OpenAI 的資料保護處理方式（預設不用於訓練、保存等）請參閱第3項連結的公開政策。首次傳送前會說明上述資訊，並取得包含向外國第三方提供資料的同意。
+對英國使用者，於 UK GDPR 適用時，資料控制者為 Hiroki Murai / bokchoyworks。AI 傳送以同意為處理依據；購買、頁數管理與客服以履行契約為依據；服務保護及防止詐欺以正當利益為依據；依法須保存的紀錄以法律義務為依據。依適用法律，可請求存取、更正、刪除、限制處理、提出異議、資料可攜，並可撤回同意。撤回不影響先前處理的合法性。向日本、美國等英國境外移轉資料時，須遵守適用的 UK GDPR 國際移轉要求。移轉保護措施的資訊可向下列窗口詢問。亦可向<a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/international-transfers/a-brief-guide-to-international-transfers/">英國資訊專員公署（ICO）</a>提出申訴。</p>
 <h2>8. 廣告</h2>
-<p>本政策所對應的現行 Release 設定尚未設定正式廣告單元與廣告 SDK，且不投放廣告。啟用廣告前，將更新本政策、同意與追蹤揭露，說明廣告服務商的資料處理。</p>
+<p>僅向未訂閱且未購買「移除廣告」的使用者顯示一則 Google AdMob 橫幅廣告。訂閱者與「移除廣告」購買者不會看到廣告。Google AdMob 可能為投放廣告、衡量成效及防止詐欺而處理裝置資訊、IP 位址、廣告曝光與互動資訊等。廣告識別碼等資料依必要的同意及裝置隱私設定處理。在 EEA（歐洲經濟區）及英國，會顯示 Google UMP 同意畫面，並依使用者選擇投放廣告。廣告同意與傳送資料至 AI 的同意分開取得。不會為廣告用途傳送學習內容或照片。Google 的處理適用 Google 隱私權政策。</p>
 <h2>9. 權限與使用條件</h2>
-<p>相機用於拍攝頁面，照片選擇器僅匯入您選擇的圖片。可在 iOS 設定變更相機權限。AI 功能受 AI 服務商的年齡及地區資格限制。可聯絡下列窗口詢問服務提供條件。</p>
+<p>相機用於拍攝頁面，照片選擇器僅匯入您選擇的圖片。可在 iOS 設定變更相機權限。
+本 App 適用於13歲以上使用者。未滿18歲須取得家長同意後使用。未滿13歲不得使用。我們不會故意收集未滿13歲兒童的資訊。App Store 年齡分級為13+。
+可於設定的「關於傳送資料至 AI」查看或撤回 AI 傳送同意。</p>
 <h2>10. 變更與聯絡</h2>
-<p>政策更新會於本頁標示新日期。隱私權詢問：bokchoyworks@gmail.com
-Google 隱私權政策：https://policies.google.com/privacy
-Gemini API 條款：https://ai.google.dev/gemini-api/terms
-Apple 隱私權政策：https://www.apple.com/legal/privacy/</p></section><hr></main></body></html>
+<p>政策更新會於本頁標示新日期。隱私權詢問：<a href="mailto:bokchoyworks@gmail.com">bokchoyworks@gmail.com</a>
+OpenAI API 資料使用與保存政策：<a href="https://developers.openai.com/api/docs/guides/your-data?popup=false">Data controls in the OpenAI platform</a>
+Google 隱私權政策：<a href="https://policies.google.com/privacy">Google 隱私權政策</a>
+Apple 隱私權政策：<a href="https://www.apple.com/legal/privacy/">Apple 隱私權政策</a></p></section><hr></main></body></html>
